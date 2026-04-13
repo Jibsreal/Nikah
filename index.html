@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="su">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Budaya Pernikahan Adat Sunda - Website responsif dengan scaling sempurna di semua device">
+    <title>Urang Sunda - Budaya Pernikahan Adat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sundanese&family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables dengan Fluid Scaling */
+        :root {
+            /* Colors - Tema Pernikahan Sunda */
+            --merah-tua: #8B1538;
+            --merah-muda: #C41E3A;
+            --emas: #D4AF37;
+            --emas-muda: #F4E4C1;
+            --ungu: #6B2D5C;
+            --hijau-tua: #1B4332;
+            --krem: #FDF5E6;
+            --putih: #ffffff;
+            --hitam: #1a1a1a;
+            
+            /* Fluid Typography Scale */
+            --font-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+            --font-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+            --font-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+            --font-lg: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+            --font-xl: clamp(1.25rem, 1.1rem + 0.75vw, 2rem);
+            --font-2xl: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+            --font-3xl: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+            --font-4xl: clamp(2.5rem, 2rem + 3vw, 5rem);
+            
+            /* Fluid Spacing Scale */
+            --space-xs: clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem);
+            --space-sm: clamp(0.75rem, 0.6rem + 0.75vw, 1rem);
+            --space-md: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+            --space-lg: clamp(1.5rem, 1.2rem + 1.5vw, 2.5rem);
+            --space-xl: clamp(2rem, 1.5rem + 2.5vw, 4rem);
+            --space-2xl: clamp(3rem, 2rem + 5vw, 6rem);
+            
+            /* Container Widths */
+            --container-sm: min(100% - 2rem, 640px);
+            --container-md: min(100% - 2rem, 768px);
+            --container-lg: min(100% - 2rem, 1024px);
+            --container-xl: min(100% - 2rem, 1280px);
+            --container-2xl: min(100% - 2rem, 1400px);
+            
+            /* Border Radius */
+            --radius-sm: clamp(0.375rem, 0.3rem + 0.35vw, 0.5rem);
+            --radius-md: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);
+            --radius-lg: clamp(0.75rem, 0.6rem + 0.75vw, 1.5rem);
+            --radius-xl: clamp(1rem, 0.8rem + 1vw, 2rem);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-emas: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Reset & Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: var(--font-base);
+            line-height: 1.6;
+            color: var(--hitam);
+            background-color: var(--krem);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, rgba(139, 21, 56, 0.98), rgba(107, 45, 92, 0.98));
+            backdrop-filter: blur(12px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-lg);
+            border-bottom: 3px solid var(--emas);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm) var(--space-md);
+            width: var(--container-2xl);
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--putih);
+            font-size: var(--font-xl);
+            font-weight: 700;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            min-height: 48px;
+        }
+
+        .logo i {
+            font-size: var(--font-2xl);
+            color: var(--emas);
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: var(--space-lg);
+        }
+
+        .nav-links a {
+            color: var(--putih);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: var(--font-base);
+            transition: all 0.3s;
+            position: relative;
+            padding: var(--space-xs) 0;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--emas);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--emas);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: flex;
+            color: var(--putih);
+            font-size: var(--font-xl);
+            cursor: pointer;
+            min-width: 48px;
+            min-height: 48px;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: var(--radius-md);
+            border: none;
+        }
+
+        .nav-links.active {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--merah-tua), var(--ungu));
+            flex-direction: column;
+            padding: var(--space-md);
+            gap: var(--space-sm);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            min-height: 100dvh;
+            background: 
+                linear-gradient(135deg, rgba(139, 21, 56, 0.85) 0%, rgba(107, 45, 92, 0.8) 50%, rgba(27, 67, 50, 0.7) 100%),
+                url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--putih);
+            position: relative;
+            overflow: hidden;
+            padding: var(--space-md);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 C60 20, 80 30, 100 30 C80 40, 70 60, 70 100 C60 80, 40 70, 0 70 C20 60, 30 40, 30 0 C40 20, 60 20, 50 0' fill='%23D4AF37' fill-opacity='0.05'/%3E%3C/svg%3E");
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: min(100%, 900px);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            border: 2px solid var(--emas);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 50px;
+            margin-bottom: var(--space-md);
+            font-size: var(--font-xs);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--emas-muda);
+        }
+
+        .hero h1 {
+            font-size: var(--font-3xl);
+            margin-bottom: var(--space-md);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--emas);
+            display: block;
+            font-size: var(--font-lg);
+            margin-top: var(--space-xs);
+            font-weight: 300;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero p {
+            font-size: var(--font-base);
+            margin-bottom: var(--space-lg);
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: var(--space-sm);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: var(--font-sm);
+            min-height: 48px;
+            min-width: 140px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--emas), #B8941F);
+            color: var(--merah-tua);
+            border: 2px solid var(--emas);
+            box-shadow: var(--shadow-emas);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--putih);
+            border: 2px solid var(--putih);
+        }
+
+        .btn-secondary:hover {
+            background: var(--putih);
+            color: var(--merah-tua);
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--space-2xl) var(--space-md);
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            width: min(100%, 800px);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-title {
+            font-size: var(--font-2xl);
+            color: var(--merah-tua);
+            margin-bottom: var(--space-sm);
+            position: relative;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--emas), var(--merah-muda));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--ungu);
+            font-size: var(--font-base);
+            margin-top: var(--space-md);
+            line-height: 1.6;
+        }
+
+        /* Tahapan Section */
+        .tahapan {
+            background: 
+                linear-gradient(to bottom, rgba(253, 245, 230, 0.95), rgba(253, 245, 230, 0.98)),
+                url('https://images.unsplash.com/photo-1520854221256-17451cc330e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            position: relative;
+        }
+
+        .timeline-container {
+            width: var(--container-xl);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--emas), var(--merah-muda), var(--ungu));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-xl);
+            padding-left: var(--space-lg);
+            background: rgba(255,255,255,0.95);
+            padding: var(--space-lg);
+            padding-left: calc(var(--space-lg) + 20px);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .timeline-item::before {
+            content: attr(data-step);
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--emas), var(--merah-muda));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--putih);
+            font-weight: 700;
+            font-size: var(--font-lg);
+            border: 4px solid var(--putih);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-content h3 {
+            color: var(--merah-tua);
+            font-size: var(--font-xl);
+            margin-bottom: var(--space-xs);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .timeline-content .sub-title {
+            color: var(--emas);
+            font-size: var(--font-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-content p {
+            color: #555;
+            line-height: 1.8;
+            font-size: var(--font-base);
+        }
+
+        .timeline-icon {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            font-size: var(--font-2xl);
+            color: var(--emas);
+            opacity: 0.3;
+        }
+
+        /* Makna Section */
+        .makna {
+            background: 
+                linear-gradient(135deg, rgba(107, 45, 92, 0.95), rgba(139, 21, 56, 0.98)),
+                url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            color: var(--putih);
+        }
+
+        .makna .section-title {
+            color: var(--putih);
+        }
+
+        .makna .section-title::after {
+            background: var(--emas);
+        }
+
+        .makna .section-subtitle {
+            color: rgba(255,255,255,0.9);
+        }
+
+        .makna-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+            width: var(--container-xl);
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .makna-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .makna-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .makna-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: var(--space-lg);
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            text-align: center;
+            transition: all 0.4s;
+        }
+
+        .makna-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.15);
+            border-color: var(--emas);
+        }
+
+        .makna-card i {
+            font-size: var(--font-3xl);
+            color: var(--emas);
+            margin-bottom: var(--space-md);
+        }
+
+        .makna-card h3 {
+            font-size: var(--font-lg);
+            margin-bottom: var(--space-sm);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .makna-card p {
+            font-size: var(--font-sm);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        /* Perlengkapan Section */
+        .perlengkapan {
+            background: var(--putih);
+        }
+
+        .perlengkapan-wrapper {
+            width: var(--container-2xl);
+            margin: 0 auto;
+        }
+
+        .perlengkapan-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-lg);
+        }
+
+        @media (min-width: 480px) {
+            .perlengkapan-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .perlengkapan-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .perlengkapan-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .perlengkapan-card {
+            background: linear-gradient(135deg, var(--krem), var(--putih));
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .perlengkapan-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .perlengkapan-img {
+            height: clamp(200px, 30vw, 280px);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .perlengkapan-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(139, 21, 56, 0.3));
+        }
+
+        .perlengkapan-content {
+            padding: var(--space-md);
+        }
+
+        .perlengkapan-content h3 {
+            color: var(--merah-tua);
+            font-size: var(--font-lg);
+            margin-bottom: var(--space-xs);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .perlengkapan-content p {
+            color: #666;
+            font-size: var(--font-sm);
+            line-height: 1.6;
+        }
+
+        /* Pakaian Section */
+        .pakaian {
+            background: 
+                linear-gradient(to bottom, rgba(253, 245, 230, 0.95), rgba(255,255,255,0.95)),
+                url('https://images.unsplash.com/photo-1594552072238-b8a33785b261?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+        }
+
+        .pakaian-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            width: var(--container-xl);
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .pakaian-container {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-2xl);
+            }
+        }
+
+        .pakaian-image {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            aspect-ratio: 3/4;
+        }
+
+        .pakaian-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pakaian-content h3 {
+            color: var(--merah-tua);
+            font-size: var(--font-2xl);
+            margin-bottom: var(--space-md);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .pakaian-content p {
+            margin-bottom: var(--space-md);
+            line-height: 1.8;
+        }
+
+        .pakaian-list {
+            list-style: none;
+        }
+
+        .pakaian-list li {
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+            position: relative;
+            border-bottom: 1px solid rgba(139, 21, 56, 0.1);
+        }
+
+        .pakaian-list li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--emas);
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: 
+                linear-gradient(135deg, rgba(139, 21, 56, 0.9), rgba(107, 45, 92, 0.9)),
+                url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
+            color: var(--putih);
+            text-align: center;
+            padding: var(--space-2xl) var(--space-md);
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .quote-section blockquote {
+            font-size: var(--font-xl);
+            font-style: italic;
+            max-width: min(90%, 800px);
+            margin: 0 auto;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-section blockquote::before,
+        .quote-section blockquote::after {
+            content: '"';
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--emas);
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        .quote-section blockquote::before {
+            top: -20px;
+            left: -20px;
+        }
+
+        .quote-section blockquote::after {
+            bottom: -40px;
+            right: -20px;
+            transform: rotate(180deg);
+        }
+
+        .quote-section p {
+            margin-top: var(--space-lg);
+            font-size: var(--font-base);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(139, 21, 56, 0.98), rgba(107, 45, 92, 0.98));
+            color: var(--putih);
+            padding: var(--space-2xl) var(--space-md) var(--space-lg);
+            border-top: 3px solid var(--emas);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            width: var(--container-2xl);
+            margin: 0 auto;
+            margin-bottom: var(--space-xl);
+        }
+
+        @media (min-width: 480px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-section h3 {
+            color: var(--emas);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-lg);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            font-size: var(--font-sm);
+            transition: all 0.3s;
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-section a:hover {
+            color: var(--emas);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+        }
+
+        .social-links a {
+            width: clamp(40px, 5vw, 48px);
+            height: clamp(40px, 5vw, 48px);
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: var(--font-base);
+        }
+
+        .social-links a:hover {
+            background: var(--emas);
+            transform: translateY(-3px);
+            border-color: var(--emas);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: var(--font-xs);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Utility Classes */
+        .text-center { text-align: center; }
+        .text-emas { color: var(--emas); }
+        .bg-merah { background-color: var(--merah-tua); }
+
+        /* Touch Device Optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .btn-primary:hover, .btn-secondary:hover {
+                transform: none;
+            }
+            
+            .timeline-item:hover, .makna-card:hover, .perlengkapan-card:hover {
+                transform: none;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* Desktop Navigation */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: none;
+            }
+            
+            .nav-links.active {
+                position: static;
+                flex-direction: row;
+                background: transparent;
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+
+        /* Large Screen Optimizations */
+        @media (min-width: 1920px) {
+            :root {
+                --font-base: 1.125rem;
+            }
+            
+            section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fas fa-ring"></i>
+                <span>Pernikahan Sunda</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#tahapan">Tahapan</a></li>
+                <li><a href="#makna">Makna</a></li>
+                <li><a href="#perlengkapan">Perlengkapan</a></li>
+                <li><a href="#pakaian">Pakaian</a></li>
+            </ul>
+            <button class="mobile-menu" onclick="toggleMenu()" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Adat Istiadat Sunda</div>
+            <h1>
+                Budaya Pernikahan Urang Sunda
+                <span>Ritus, Makna, jeung Keindahan</span>
+            </h1>
+            <p>Paluruh tahapan pernikahan adat Sunda anu penuh makna, ti neundeun omong nepi ka huap lingkung. Warisan karuhun anu masih dijaga kénéh.</p>
+            <div class="btn-group">
+                <a href="#tahapan" class="btn-primary">
+                    Papernah Tahapan <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#makna" class="btn-secondary">
+                    <i class="fas fa-heart"></i> Paluruh Makna
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tahapan Section -->
+    <section id="tahapan" class="tahapan scroll-reveal">
+        <div class="section-header">
+            <h2 class="section-title">Tahapan Pernikahan</h2>
+            <p class="section-subtitle">Prosesi ti pra-nikah nepi ka pasca upacara</p>
+        </div>
+        
+        <div class="timeline-container">
+            <div class="timeline">
+                <!-- Pra-nikah -->
+                <div class="timeline-item" data-step="1">
+                    <i class="fas fa-comments timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Pra-Nikah</div>
+                        <h3>Neundeun Omong</h3>
+                        <p>Upacara pamungkas ti kulawarga calon pengantin pikeu ngawujudkeun niat nikah. Kulawarga calon pamajikan ngalakonan sungkem ka kulawarga calon mempelai wadon.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-step="2">
+                    <i class="fas fa-gift timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Pra-Nikah</div>
+                        <h3>Narosan jeung Nyandakeun</h3>
+                        <p>Acara lamaran resmi anu ngahaja perhiasan, duit, baju, jeung seserahan. Nyandakeun diayakeun saminggu sateuacan dinten nikah.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-step="3">
+                    <i class="fas fa-water timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Pra-Nikah</div>
+                        <h3>Siraman</h3>
+                        <p>Pengantin diguyur ku cai anu dicampur kembang tujuh rupa. Maknana pikeu ngabersihkeun awak jeung haté sateuacan nikah.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-step="4">
+                    <i class="fas fa-pray timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Pra-Nikah</div>
+                        <h3>Sungkeman</h3>
+                        <p>Pengantin ngalakonan sungkem ka indung-bapa pikeu ménta restu. Hiji-hijina prosesi anu teu kudu diantepkeun dina agama.</p>
+                    </div>
+                </div>
+
+                <!-- Dinten Nikah -->
+                <div class="timeline-item" data-step="5">
+                    <i class="fas fa-mosque timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Dinten Nikah</div>
+                        <h3>Akad Nikah</h3>
+                        <p>Upacara sakral anu dilakosan ku penganten lalaki di imahna atawa di KUA. Saksi jeung wali kudu aya dina acara ieu.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-step="6">
+                    <i class="fas fa-door-open timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Dinten Nikah</div>
+                        <h3>Mapag Panganten</h3>
+                        <p>Penganten lalaki datang ka imah penganten wadon jeung rombongan. Diantos ku pager ayu, panayagan, jeung Ki Lengser.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-step="7">
+                    <i class="fas fa-coins timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Dinten Nikah</div>
+                        <h3>Saweran</h3>
+                        <p>Indung-bapa ngawer beras, duit, kunir, permén, jeung kembang ka penganten. Maknana: rejeki, kamakmuran, jeung kakawinan anu manis.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-step="8">
+                    <i class="fas fa-egg timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Dinten Nikah</div>
+                        <h3>Nincak Endog</h3>
+                        <p>Penganten lalaki nincak endog, tuluy penganten wadon ngumbah suku batur. Simbol: rasa hormat jeung kasih ka salaki.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-step="9">
+                    <i class="fas fa-utensils timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Dinten Nikah</div>
+                        <h3>Huap Lingkung</h3>
+                        <p>Indung-bapa nyuapi penganten pikeu panungtungan kalayan. Penganten ogé saling nyuapi: simbol saling ngajaga jeung ngarawat.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-step="10">
+                    <i class="fas fa-drumstick-bite timeline-icon"></i>
+                    <div class="timeline-content">
+                        <div class="sub-title">Dinten Nikah</div>
+                        <h3>Pabetot Bakakak</h3>
+                        <p>Penganten saling tarung pikeu bagian ayam bakar anu paling gede. Simbol: rejeki anu dicariosan sacara adil.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Makna Section -->
+    <section id="makna" class="makna scroll-reveal">
+        <div class="section-header">
+            <h2 class="section-title">Makna Simbolis</h2>
+            <p class="section-subtitle">Harti tina unggal prosesi pernikahan</p>
+        </div>
+
+        <div class="makna-grid">
+            <div class="makna-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Saling Ngajaga</h3>
+                <p>Huap lingkung jeung pabetot bakakak ngajarkan kana pentingna saling ngarawat jeung ngabagi dina rumahtangga.</p>
+            </div>
+            <div class="makna-card">
+                <i class="fas fa-heart"></i>
+                <h3>Rasa Hormat</h3>
+                <p>Nincak endog jeung ngumbah suku nunjukkeun rasa hormat penganten wadon ka salaki minangka kepala kulawarga.</p>
+            </div>
+            <div class="makna-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Kabersihan Haté</h3>
+                <p>Siraman ngalambangkeun kabersihan awak jeung haté sateuacan ngawangun rumahtangga anyar.</p>
+            </div>
+            <div class="makna-card">
+                <i class="fas fa-users"></i>
+                <h3>Kebersamaan</h3>
+                <p>Saweran jeung mapag panganten ngahijikeun kulawarga dua pihak jadi hiji kulawarga gede.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perlengkapan Section -->
+    <section id="perlengkapan" class="perlengkapan scroll-reveal">
+        <div class="section-header">
+            <h2 class="section-title">Perlengkapan Adat</h2>
+            <p class="section-subtitle">Barang-barang anu diperlukeun dina upacara</p>
+        </div>
+
+        <div class="perlengkapan-wrapper">
+            <div class="perlengkapan-grid">
+                <div class="perlengkapan-card">
+                    <div class="perlengkapan-img" style="background-image: url('https://images.unsplash.com/photo-1594552072238-b8a33785b261?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="perlengkapan-content">
+                        <h3>Parang/Keris</h3>
+                        <p>Simbol pembelahan hirup jeung pupus. Ogé minangka alat pertahanan jeung kakuatan.</p>
+                    </div>
+                </div>
+                <div class="perlengkapan-card">
+                    <div class="perlengkapan-img" style="background-image: url('https://images.unsplash.com/photo-1516048015710-7a3b4c869502?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="perlengkapan-content">
+                        <h3>Payung</h3>
+                        <p>Simbol perlindungan jeung kamulyaan. Payung anu dihias warna-warni dipaké dina prosesi mapag panganten.</p>
+                    </div>
+                </div>
+                <div class="perlengkapan-card">
+                    <div class="perlengkapan-img" style="background-image: url('https://images.unsplash.com/photo-1606800052052-a08af7148866?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="perlengkapan-content">
+                        <h3>Kembang Tujuh Rupa</h3>
+                        <p>Digunakeun dina siraman: mawar bodas jeung beureum, cempaka, kenanga, melati, sedap malam, jeung melati gambir.</p>
+                    </div>
+                </div>
+                <div class="perlengkapan-card">
+                    <div class="perlengkapan-img" style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                    <div class="perlengkapan-content">
+                        <h3>Bakakak Ayam</h3>
+                        <p>Ayam bakar anu dijieun pikeu prosesi pabetot. Simbol rejeki jeung kabagjaan rumahtangga.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pakaian Section -->
+    <section id="pakaian" class="pakaian scroll-reveal">
+        <div class="section-header">
+            <h2 class="section-title">Busana Pengantin</h2>
+            <p class="section-subtitle">Pakaian adat Sunda anu mewah jeung bermakna</p>
+        </div>
+
+        <div class="pakaian-container">
+            <div class="pakaian-image">
+                <img src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Busana Pengantin Sunda" loading="lazy">
+            </div>
+            <div class="pakaian-content">
+                <h3>Kebaya Sunda jeung Pangsi</h3>
+                <p>Pakaian pengantin adat Sunda ngalambangkeun kasucian jeung kamulyaan. Bahan-bahan anu digunakeun:</p>
+                <ul class="pakaian-list">
+                    <li><strong>Kebaya:</strong> Baju tradisional wadon warna bodas atawa beureum, dihias renda jeung payet emas.</li>
+                    <li><strong>Kain Samping:</strong> Kain batik atawa songket anu di-ikat di wasté.</li>
+                    <li><strong>Pangsi:</strong> Baju tradisional lalaki warna bodas atawa hideung, sarung, jeung blangkon.</li>
+                    <li><strong>Aksesoris:</strong> Siger (mahkota emas), gelang emas, anting, jeung kalung.</li>
+                    <li><strong>Perhiasan:</strong> Cucuk rambut emas, pending, jeung cincin kawin.</li>
+                </ul>
+                <p style="margin-top: var(--space-md); font-style: italic; color: var(--merah-tua);">
+                    "Pakaian pengantin henteu ngan hiasan, tapi simbol status sosial jeung kasucian haté."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <blockquote>
+            "Titi Gantung, Tali Rasa - Rumahtangga anu jangkungna gumantung kana rasa anu aya dina rumahtangga éta."
+        </blockquote>
+        <p>- Pepeling Urang Sunda</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Pernikahan Sunda</h3>
+                <p>Media pelestarian budaya pernikahan adat Sunda. Ngajaga warisan karuhun pikeu generasi payun.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Tautan Guna</h3>
+                <a href="#tahapan">Tahapan Nikah</a>
+                <a href="#makna">Makna Simbolis</a>
+                <a href="#perlengkapan">Perlengkapan</a>
+                <a href="#pakaian">Busana Adat</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p><i class="fas fa-envelope"></i> nikah.sunda@contoh.com</p>
+                <p><i class="fas fa-phone"></i> +62 812 3456 7890</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jawa Barat, Indonesia</p>
+            </div>
+            <div class="footer-section">
+                <h3>Dukungan</h3>
+                <p>Dukung kami ngalestarikeun budaya Sunda ku ngabagi konten ka sobat-sobat anjeun.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pernikahan Sunda. Dirgahayu Budaya Sunda.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const navLinks = document.getElementById('navLinks');
+            if (!nav.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Active Nav on Scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = 'var(--emas)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
